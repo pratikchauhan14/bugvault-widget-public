@@ -15,7 +15,12 @@
       
       <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script> -->
 
-   <script src="./widget.min.js"></script>
+   <script src="./widget.min.js" onerror="console.error('Failed to load widget.min.js')"></script>
+   <script>
+   document.addEventListener('DOMContentLoaded', () => {
+      const test = new BugVaultApp({ devMode: true });
+   });
+   </script>
 
    </body>
 </html>
