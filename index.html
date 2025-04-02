@@ -177,7 +177,8 @@ p + p {
    document.addEventListener('DOMContentLoaded', () => {
       const test = new FlagBugIO({ 
          devMode: true,
-         isScreenShotMode: true,
+         apiMode:"production", // local or production
+         isScreenShotMode: false,
       });
    });
    </script>
