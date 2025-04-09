@@ -1,0 +1,471 @@
+[class*="FlagBugIO"] { box-sizing: border-box; font-family: system-ui; 
+-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+
+.FlagBugIO--border { border: 1px solid #e5e5e5; border-radius: 8px; }
+.FlagBugIO-form {padding: 0 20px 25px;background: #fff;max-width: 440px;width: 440px;}
+
+.FlagBugIO--title-gd {
+    margin: 0 -20px;
+    padding: 10px 30px;
+    border-bottom: 1px solid rgb(203, 214, 226);
+    background-image: linear-gradient(-303deg, rgb(0, 164, 189), rgb(0, 175, 178) 56%, rgb(0, 189, 165));
+    color: #fff;
+    margin-bottom: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+.FlagBugIO-bug-user {
+    padding: 3px 5px 4px;
+    font-size: 12px;
+    border-radius: 4px;
+    background: #00000024;
+    border: 1px solid #00000012;
+    font-weight: 600;
+    color: #fff;
+}
+
+.FlagBugIO-form-header {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.FlagBugIO-bug-timestamp {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.FlagBugIO-bug-info {
+    cursor: pointer;
+}
+
+
+
+.FlagBugIO--shadow { box-shadow: 0 0 17px 5px #e9e9e9; }
+.FlagBugIO--title { font-weight: 600; font-size: 17px; }
+
+
+.FlagBugIO-label {
+    font-weight: 500;
+    font-size: 13px;
+    display: block;
+    padding: 0 0 4px;
+    color: #353535;
+}
+
+
+.FlagBugIO--control {
+    padding: 9px 11px;
+    border: 1px solid rgb(203, 214, 226);
+    border-radius: 4px;
+    font-weight: 400;
+    color: #2c2c2c;
+    font-size: 15px;
+    outline: none;
+    transition: all 250ms ease;
+}
+
+.FlagBugIO--control:focus,.FlagBugIO--control.active {
+    box-shadow: rgba(0, 208, 228, 0.3) 0px 0px 4px 1px, rgb(0, 208, 228) 0px 0px 0px 1px !important;
+    border-color: #32bace;
+}
+
+.FlagBugIO-form-group {
+    padding: 5px 0;
+}
+
+
+/* */
+.FlagBugIO-row {
+    display: grid;
+    gap: 15px;
+}
+
+.FlagBugIO-row-2 {
+    grid-template-columns:calc(50% - 7px) calc(50% - 7px);
+}
+.FlagBugIO-flex-gap {
+    gap: 10px;
+}
+
+
+/* */
+.FlagBugIO--dropdown-option {
+    cursor: pointer;
+    padding: 4px 15px;
+}
+.FlagBugIO--checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.FlagBugIO--dropdown-option > span {
+    position: relative;
+    --borderWidth: 2px;
+    --height: 19px;
+    --width: 19px;
+    --borderColor: #fff;
+    display: inline-flex;
+    align-items: center;
+}
+
+.FlagBugIO--checkbox > span:before {
+    content: '';
+    height: 15px;
+    width: 15px;
+    border: 2px solid rgb(196 196 196);
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    box-shadow: rgb(204 204 204 / 30%) 0px 0px 0px 0px, rgb(195 195 195) 0px 0px 0px 0px !important;
+    background: #fff;
+}
+
+input[type="checkbox"]:checked + span {
+}
+
+input[type="checkbox"]:checked + span:before {
+    border-color: #32bace;
+    background: #32bace;
+}
+
+.FlagBugIO--checkbox > span:after {
+    content: '';
+    display: inline-block;
+    transform: rotate(45deg) translate(4px,-5px);
+    height: calc(var(--height) - 12px);
+    width: calc(var(--width) - 15px);
+    border-bottom: var(--borderWidth) solid var(--borderColor);
+    border-right: var(--borderWidth) solid var(--borderColor);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked + span:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.FlagBugIO--dropdown-option > span img {
+    height: 25px !important;
+    width: 25px !important;
+    display: inline-block;
+    border-radius: 100% !important;
+    margin-left: 5px !important;
+    margin-right: 8px !important;
+}
+
+
+/* */
+.FlagBugIO--dropdown-menu {
+    position: absolute;
+    top: 100%;
+    background: #fff;
+    border: 1px solid rgb(203, 214, 226);
+    z-index: 1;
+    width: 100%;
+    min-width: 320px;
+}
+
+.FlagBugIO--dropdown-container {
+    position: relative;
+}
+
+.FlagBugIO--searchInput,
+.FlagBugIO--filterInput {
+    padding: 10px 15px;
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+    border-bottom: 1px solid rgb(203, 214, 226);
+    height: 56px;
+    width: 100%;
+}
+.FlagBugIO--filterInput {
+    height: 90px;
+}
+
+.FlagBugIO--dropdown-search {
+    width: 100%;
+}
+
+.FlagBugIO--searchInput + .FlagBugIO--optionContainer {
+    margin-top: 56px;
+}
+
+.FlagBugIO--dropdown-search {
+    height: 35px;
+}
+
+.FlagBugIO--optionContainer {
+    max-height: 200px;
+    overflow: auto;
+    background: #fff;
+    z-index: 1;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+
+.FlagBugIO--dropdown-option.selected {
+    background: #f1fbfd;
+    font-weight: 600;
+}
+
+
+.FlagBugIO--dropdown-group.FlagBugIO--checkbox {
+    font-weight: 600;
+    padding: 10px 15px;
+    pointer-events: none;
+}
+
+.FlagBugIO--dropdown-group.FlagBugIO--checkbox span:before,.FlagBugIO--dropdown-group.FlagBugIO--checkbox span:after {
+    display: none;
+}
+
+.FlagBugIO--dropdown-group.FlagBugIO--checkbox span{
+    padding:0;
+}
+
+.FlagBugIO--dropdown-group > span {
+    font-size: 15px;
+}
+
+
+.FlagBugIO--checkbox > span {
+    padding-left: 22px;
+}
+
+.FlagBugIO--dropdown-selected-list {
+    padding: 2px 5px;
+    background: #f1fbfd;
+    border: 1px solid #c9ced0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: auto;
+}
+
+.FlagBugIO--dropdown-selected.FlagBugIO--control {
+    padding: 0;
+    height: 40px;
+    padding: 0px 11px;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    cursor: pointer;
+}
+
+.FlagBugIO--dropdown-selected.FlagBugIO--control > div {
+    display: flex;
+    gap: 5px;
+}
+
+.FlagBugIO--dropdown-selected-list:hover {
+    background: #c5dadf;
+    border-color: #c9ced0;
+}
+
+
+/* */
+.FlagBugIO-flex {
+    display: flex;
+    align-items: center;
+}
+
+.FlagBugIO-justify-space-between {
+    justify-content: space-between;
+}
+
+.FlagBugIO-form-button {
+    --bg: #000000;
+    --text: #fff;
+    background: var(--bg);
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: var(--text);
+    font-weight: 700;
+    font-size: 13px;
+    border: 1px solid var(--bg);
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display:inline-block;
+}
+
+.FlagBugIO-form-button.FlagBugIO-form-button--outline {
+    --bg: #fff;
+    --text: #000000;
+    border-color: #aeaeae;
+}
+
+.FlagBugIO-form-button:hover {
+    --bg: #505050;
+}
+
+.FlagBugIO-form-button.FlagBugIO-form-button--outline:hover {background: hsl(0deg 0% 0% / 10%);border-color: hsl(0deg 0% 0% / 36%);}
+
+.FlagBugIO-form-buttons {
+    padding-top: 15px;
+}
+
+.FlagBugIO-flex-column{
+    flex-direction: column;
+}
+
+.FlagBugIO-full{
+    width: 100%;
+}
+
+/* */
+.FlagBugIO-weight--500{ font-weight: 500;}
+.FlagBugIO-weight--600{ font-weight: 600;}
+.FlagBugIO-weight--700{ font-weight: 700;}
+
+.FlagBugIO-size--normal{ font-size: 14px;}
+.FlagBugIO-size--small{ font-size: 12px;}
+.FlagBugIO-size--medium{ font-size: 16px;}
+.FlagBugIO-size--large{ font-size: 18px;}
+
+.FlagBugIO-pt--normal{ padding-top: 0px;}
+.FlagBugIO-pt--small{ padding-top: 5px;}
+.FlagBugIO-pt--medium{ padding-top: 10px;}
+.FlagBugIO-pt--large{ padding-top: 15px;}
+
+
+
+
+
+/* */
+.FlagBugIO-badge {
+    --bg: 254, 201, 1;
+    --opacity: 0.1;
+    padding: 3px 9px 3px 7px;
+    border-radius: 15px;
+    background: rgba(var(--bg), var(--opacity));
+    border: 1px solid rgba(var(--bg), 0.2);
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.FlagBugIO-badge.FlagBugIO-badge-normal:before {
+    display: none;
+}
+
+.FlagBugIO-badge:before {
+    content: '';
+    height: 13px;
+    width: 13px;
+    background: rgba(var(--bg), 1);
+    display: inline-block;
+    border-radius: 100%;
+}
+.FlagBugIO-badge--low {
+    --bg: 63,81,181;
+    --opacity: 0.1;
+}
+
+.FlagBugIO-badge--high {
+    --bg: 255, 87, 34;
+    --opacity: 0.1;
+}
+
+.FlagBugMarker-explorer-item {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+.FlagBugMarker-explorer-item.FlagBugMarker--item-active {
+    background: rgb(0 171 182 / 5%);
+    border-color: rgb(0 171 182 / 35%);
+}
+.FlagBugIO-badge--open {
+    --bg: 63, 81, 182;
+    --opacity: 1;
+    color: #fff;
+}
+
+.FlagBugIO-badge--in-progress {
+    --bg: 254, 201, 1;
+    --opacity: 1;
+    color: #000;
+}
+
+.FlagBugIO-badge--resolved {
+    --bg: 76, 175, 80;
+    --opacity: 1;
+    color: #fff;
+}
+
+.FlagBugIO-badge--closed {
+    --bg: 255, 87, 34;
+    --opacity: 1;
+    color: #fff;
+}
+
+
+/* */
+/* .FlagBugMarker-explorer-item {
+    border-left: 3px solid #000;
+} */
+
+/* .FlagBugIO-status-closed {
+    border-left-color: red !important;
+}
+
+.FlagBugIO-status-resolved {
+    border-left-color: green !important;
+}
+
+.FlagBugIO-status-in-progress {
+    border-left-color: #fec901 !important;
+}
+
+.FlagBugIO-status-open {
+    border-left-color: #3f51b6 !important;
+} */
+
+.FlagBugMarker-explorer-list {
+    padding:0 5px;
+    margin:90px 0 10px;
+}
+.FlagBugMarker-explorer-content {
+    max-height: calc(100vh - 80px);
+    overflow: auto;
+}
+
+
+/* */
+.FlagBugMarker-explorer-panel {
+    position: fixed;
+    z-index:10002;
+    background: #fff;
+    width:360px;
+}
+
+
+.FlagBugMarker-explorer-panel .FlagBugIO--title-gd {
+    margin: 0;
+}
+
+.FlagBugIO--dropdown-selected-list span {
+    white-space: pre;
+}
