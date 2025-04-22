@@ -17,6 +17,10 @@
     color:#000;
 }
 
+.FlagBugIO--title-gd *{
+    color:#fff;
+}
+
 .FlagBugIO-bug-user {
     padding: 3px 5px 4px;
     font-size: 12px;
