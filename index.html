@@ -4,17 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Extension</title>
-  <link rel="stylesheet" href="index_style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app-container">
     <!-- Your app content here -->
   </div>
-  <script src="bundle.js"></script>
+  <!-- <script src="app.min.js"></script> -->
+  <script src="app.supermin.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+
+        const apiLocal = false;
+        let endpoint = "http://192.168.0.159:3030/api/v1/";
+        if(!apiLocal){
+            endpoint = "https://bugvault.2cube.studio/api/v1/";
+        }
+
         new FlagBugApp({
-          devMode:true
+            devMode:false,
+            endpoint:endpoint,
+            apiLocal:apiLocal
         });
     });
     </script>
