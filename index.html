@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Extension</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.min.css">
 </head>
 <body>
   <div id="app-container">
@@ -15,7 +15,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
 
-        const apiLocal = false;
+        const apiLocal = true;
         let endpoint = "http://192.168.0.159:3030/api/v1/";
         if(!apiLocal){
             endpoint = "https://bugvault.2cube.studio/api/v1/";
