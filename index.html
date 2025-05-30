@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlagBugIO</title>
+    <!-- add fevicon blank -->
+     <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
+    
+
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    
+
+    <input type="text" id="task-id" placeholder="ID">
+    <button id="delete-task">delete task</button>
+    <button id="get-tasks">get tasks</button>
+    <div>
+        <h1>FlagBugIO Update Task Form</h1>
+        <div class="update-task-form-container"></div>
+    </div>
+
+
+
+   <script>
+
+   document.getElementById('delete-task').addEventListener('click', () => {
+        const taskId = document.getElementById('task-id').value;
+        window._API._deleteTask({ id: taskId });
+    });
+
+    document.getElementById('get-tasks').addEventListener('click', () => {
+        const taskId = document.getElementById('task-id').value;
+        window._API._getTasks({ project_id: taskId });
+    });
+
+   // user login
+//    document.getElementById('user-login').addEventListener('click', () => {
+//        window.userLogin();
+//    });
+
+//    // logout
+//    document.getElementById('logout').addEventListener('click', () => {
+//        window.userLogout();
+//    });
+
+//    // get project
+//    document.getElementById('get-project').addEventListener('click', () => {
+//        window.getProject();
+//    });
+
+//    // get project list
+//    document.getElementById('get-project-list').addEventListener('click', () => {
+//        window.getProjectList();
+//    });
+
+   
+
+    // const screenshotImage = document.getElementById('screenshot-image');
+
+    
+    
+    
+   
+
+    
+   </script>
+</body>
+</html>
